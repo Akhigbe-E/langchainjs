@@ -1,5 +1,6 @@
+// Omit asyncIterator due to web streams polyfill issues
 export interface IterableReadableStreamInterface<T>
-  extends ReadableStream<T>,
+  extends Omit<ReadableStream<T>, "@@asyncIterator">,
     AsyncIterable<T> {}
 
 /*
